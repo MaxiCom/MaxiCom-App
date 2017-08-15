@@ -8,4 +8,4 @@ Application officielle MaxiCom en React Native (Android & IOS).
 
 # Screenshot 
 
-![Login view](/Screenshot/Screenshot.png?raw=true "Login view")
+![Login view](/Screenshot/screenshot.png?raw=true "Login view")
