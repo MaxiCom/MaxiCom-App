@@ -63,4 +63,4 @@ const App = StackNavigator({
 	headerMode: 'none'
 });
 
-AppRegistry.registerComponent('LoginApp', () => App);
+AppRegistry.registerComponent('MaxiCom', () => App);
