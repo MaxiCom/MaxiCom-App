@@ -20,7 +20,7 @@ export default class LoginApp extends Component {
 			this.setState({
 				loading: false
 			});
-		}, 2000);
+		}, 2500);
 	}
 
 	async componentWillMount() {
