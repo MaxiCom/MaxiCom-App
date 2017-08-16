@@ -1,8 +1,9 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {KeyboardAvoidingView, View, StyleSheet, Image, Text, Button, TextInput, Alert, Keyboard, AsyncStorage} from 'react-native';
+import {View, StyleSheet, Image, Text, Button, TextInput, Alert, Keyboard, AsyncStorage} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 
 export default class Login extends Component {
 	constructor(props) {
@@ -53,41 +54,40 @@ export default class Login extends Component {
 
 	render() {
 		return (
-			<KeyboardAvoidingView
-				style={styles.fullContainer}
-				behavior="padding"
-			>
-				<View style={styles.sectionContainer}>
-					<Image
-						source={require('./../../../img/logo.png')}
-						style={styles.logo}
-					/>
+			<KeyboardAwareScrollView contentContainerStyle={styles.fullContainer}>
+				<View>
+					<View style={styles.sectionContainer}>
+						<Image
+							source={require('./../../../img/logo.png')}
+							style={styles.logo}
+						/>
 
-					<Text style={styles.text}>MaxiCom</Text>
-					
-					<TextInput 
-						style={styles.input}
-						placeholder="Nom d'utilisateur"
-						placeholderTextColor="white"
-						underlineColorAndroid='white'
-						onChangeText={(username) => this.setState({username})}
-					/>
+						<Text style={styles.text}>MaxiCom</Text>
+						
+						<TextInput 
+							style={styles.input}
+							placeholder="Nom d'utilisateur"
+							placeholderTextColor="white"
+							underlineColorAndroid='white'
+							onChangeText={(username) => this.setState({username})}
+						/>
 
-					<TextInput 
-						style={styles.input}
-						placeholder='Mot de passe'
-						placeholderTextColor="white"
-						underlineColorAndroid="white"
-						secureTextEntry
-						onChangeText={(password) => this.setState({password})}
-					/>
+						<TextInput 
+							style={styles.input}
+							placeholder='Mot de passe'
+							placeholderTextColor="white"
+							underlineColorAndroid="white"
+							secureTextEntry
+							onChangeText={(password) => this.setState({password})}
+						/>
 
-					<Button
-						title='Connexion'
-						onPress={() => this.buttonOnPressHandler()}
-					/>
+						<Button
+							title='Connexion'
+							onPress={() => this.buttonOnPressHandler()}
+						/>
+					</View>
 				</View>
-			</KeyboardAvoidingView>
+			</KeyboardAwareScrollView>
 		);
 	}
 }
